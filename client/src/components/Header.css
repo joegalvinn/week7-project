@@ -1,0 +1,9 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(40px, 7vw, 75px);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}

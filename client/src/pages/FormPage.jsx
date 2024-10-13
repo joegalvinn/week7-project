@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./FormPage.css";
 
 export function FormPage() {
   const [formData, setFormData] = useState({
@@ -47,10 +48,9 @@ export function FormPage() {
   };
 
   return (
-    <div>
-      <h2>Add a New Exercise</h2>
+    <div className="formContainer">
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="formGroup">
           <label htmlFor="exercise_name">Exercise Name:</label>
           <input
             type="text"
@@ -63,7 +63,7 @@ export function FormPage() {
           />
         </div>
 
-        <div>
+        <div className="formGroup">
           <label htmlFor="exercise_group">Exercise Group:</label>
           <input
             type="text"
@@ -76,7 +76,7 @@ export function FormPage() {
           />
         </div>
 
-        <div>
+        <div className="formGroup">
           <label htmlFor="exercise_date">Exercise Date:</label>
           <input
             type="date"
@@ -88,7 +88,7 @@ export function FormPage() {
           />
         </div>
 
-        <div>
+        <div className="formGroup">
           <label htmlFor="weight_kg">Weight (kg):</label>
           <input
             type="number"
@@ -100,7 +100,7 @@ export function FormPage() {
           />
         </div>
 
-        <div>
+        <div className="formGroup">
           <label htmlFor="sets">Sets :</label>
           <input
             type="number"
@@ -112,7 +112,7 @@ export function FormPage() {
           />
         </div>
 
-        <div>
+        <div className="formGroup">
           <label htmlFor="reps">Reps :</label>
           <input
             type="number"
@@ -124,7 +124,7 @@ export function FormPage() {
           />
         </div>
 
-        <div>
+        <div className="formGroup">
           <label htmlFor="notes">Notes :</label>
           <textarea
             id="notes"
@@ -134,7 +134,9 @@ export function FormPage() {
           />
         </div>
 
-        <button type="submit">Add Exercise</button>
+        <button className="addButton" type="submit">
+          Add Exercise
+        </button>
       </form>
     </div>
   );

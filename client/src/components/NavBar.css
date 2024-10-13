@@ -1,0 +1,39 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+.nav {
+  color: black;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(20px, 3vw, 45px);
+  margin-left: 10px;
+}
+
+.nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px 25px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav a:hover {
+  color: #f8f9fa;
+}
+
+.nav a.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #313131;
+}
+
+.nav.darkmode {
+  color: white;
+}
+
+.nav.darkmode a {
+  color: white;
+}
+
+.nav.darkmode a:hover {
+  color: #7e7e7e;
+}
