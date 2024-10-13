@@ -12,7 +12,8 @@ export function ExerciseDetailPage() {
     async function fetchExercise() {
       try {
         const response = await fetch(
-          `http://localhost:8080/exercise-log-detailed/${id}`
+          `https://week7-project-qkny.onrender.com/exercise-log-detailed/${id}`
+          // http://localhost:8080/exercise-log-detailed/${id}
         );
         const data = await response.json();
         if (response.ok) {
