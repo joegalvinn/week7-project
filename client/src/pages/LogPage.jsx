@@ -13,7 +13,7 @@ export function LogPage() {
     async function fetchData() {
       try {
         const response = await fetch(
-          `https://week7-project-qkny.onrender.com/exercise-log?sort=${sortOrder}`
+          `https://week7-project-server.onrender.com/exercise-log?sort=${sortOrder}`
           // `http://localhost:8080/exercise-log?sort=${sortOrder}`
         );
         const data = await response.json();

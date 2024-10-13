@@ -16,7 +16,7 @@ export function FormPage() {
     event.preventDefault();
     try {
       const response = await fetch(
-        "https://week7-project-qkny.onrender.com/add-exercise",
+        "https://week7-project-server.onrender.com/add-exercise",
         {
           // "http://localhost:8080/add-exercise"
           method: "POST",

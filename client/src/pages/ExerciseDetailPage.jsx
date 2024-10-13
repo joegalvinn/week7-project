@@ -12,7 +12,7 @@ export function ExerciseDetailPage() {
     async function fetchExercise() {
       try {
         const response = await fetch(
-          `https://week7-project-qkny.onrender.com/exercise-log-detailed/${id}`
+          `https://week7-project-server.onrender.com/exercise-log-detailed/${id}`
           // http://localhost:8080/exercise-log-detailed/${id}
         );
         const data = await response.json();
@@ -39,7 +39,7 @@ export function ExerciseDetailPage() {
 
     try {
       const response = await fetch(
-        `https://week7-project-qkny.onrender.com/exercise-log/${id}`,
+        `https://week7-project-server.onrender.com/exercise-log/${id}`,
         {
           // http://localhost:8080/exercise-log/${id}
           method: "DELETE",
