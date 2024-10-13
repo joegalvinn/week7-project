@@ -37,9 +37,13 @@ export function ExerciseDetailPage() {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:8080/exercise-log/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://week7-project-qkny.onrender.com/exercise-log/${id}`,
+        {
+          // http://localhost:8080/exercise-log/${id}
+          method: "DELETE",
+        }
+      );
 
       if (response.ok) {
         alert("Exercise deleted successfully!");

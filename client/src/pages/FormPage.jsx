@@ -15,11 +15,15 @@ export function FormPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/add-exercise", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://week7-project-qkny.onrender.com/add-exercise",
+        {
+          // "http://localhost:8080/add-exercise"
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       if (response.ok) {
         setFormData({
           exercise_name: "",
