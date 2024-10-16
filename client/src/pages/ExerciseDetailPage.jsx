@@ -89,9 +89,6 @@ export function ExerciseDetailPage() {
         <p>
           <b>Notes:</b> {exercise.notes}
         </p>
-        <p>
-          <b>Comments:</b> {exercise.exercise_text || "No Comments"}
-        </p>
         <button onClick={handleDelete}>Delete</button>
       </div>
     </section>

@@ -18,7 +18,7 @@
 }
 
 .nav a:hover {
-  color: #f8f9fa;
+  color: #555555;
 }
 
 .nav a.active {
@@ -36,4 +36,42 @@
 
 .nav.darkmode a:hover {
   color: #7e7e7e;
+}
+
+.nav a:focus,
+.nav a:active {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2); /* Optional background change */
+}
+
+/* Specific focus/active color for each link */
+.home-link:focus,
+.home-link:active {
+  color: #ff6347; /* Tomato */
+}
+
+.add-exercise-link:focus,
+.add-exercise-link:active {
+  color: #32cd32; /* LimeGreen */
+}
+
+.log-link:focus,
+.log-link:active {
+  color: #1e90ff; /* DodgerBlue */
+}
+
+/* Dark mode specific focus/active styling */
+.nav.darkmode .home-link:focus,
+.nav.darkmode .home-link:active {
+  color: #ffa07a; /* LightSalmon */
+}
+
+.nav.darkmode .add-exercise-link:focus,
+.nav.darkmode .add-exercise-link:active {
+  color: #7fff00; /* Chartreuse */
+}
+
+.nav.darkmode .log-link:focus,
+.nav.darkmode .log-link:active {
+  color: #00bfff; /* DeepSkyBlue */
 }
