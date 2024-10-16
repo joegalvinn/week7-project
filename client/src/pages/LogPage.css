@@ -18,6 +18,10 @@ table {
   width: 70vw;
 }
 
+.filter {
+  width: 70vw;
+}
+
 .tableContainer thead {
   position: sticky;
   top: 0;
