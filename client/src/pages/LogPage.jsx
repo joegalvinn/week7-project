@@ -49,14 +49,14 @@ export function LogPage() {
   };
 
   const filteredExercises = exercises.filter((exercise) => {
-    const matchesSerachTerm = exercise.exercise_name
+    const matchesSearchTerm = exercise.exercise_name
       .toLowerCase()
-      .include(searchTerm.toLowerCase());
+      .includes(searchTerm.toLowerCase());
 
     const matchesGroup =
       selectedGroup === "" || exercise.exercise_group === selectedGroup;
 
-    return matchesSerachTerm && matchesGroup;
+    return matchesSearchTerm && matchesGroup;
   });
 
   return (
