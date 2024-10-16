@@ -7,6 +7,8 @@ export function LogPage() {
   const [exercises, setExercises] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sortOrder, setSortORder] = useState("asc");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedGroup, setSelectedGroup] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,43 +48,76 @@ export function LogPage() {
     navigate(`/exercise-log/${id}`);
   };
 
+  const filteredExercises = exercises.filter((exercise) => {
+    const matchesSerachTerm = exercise.exercise_name
+      .toLowerCase()
+      .include(searchTerm.toLowerCase());
+
+    const matchesGroup =
+      selectedGroup === "" || exercise.exercise_group === selectedGroup;
+
+    return matchesSerachTerm && matchesGroup;
+  });
+
   return (
     <>
-      {/* I need to render my posts in here */}
-      {/* A suggestion: use some conditional rendering in here too (if you want) */}
       {loading ? (
         <p>Loading your exercises...</p>
       ) : (
-        <div className="tableContainer">
-          <table border="1" cellPadding="10">
-            <thead>
-              <tr>
-                <th>Exercise Name</th>
-                <th>Exercise Group</th>
-                <th onClick={handleSortByDate} style={{ cursor: "pointer" }}>
-                  Exercise Date {sortOrder === "asc" ? "↑" : "↓"}
-                </th>
-                <th>Weight (kg)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {exercises.map((exercise) => (
-                <tr
-                  key={exercise.id}
-                  onClick={() => handleRowClick(exercise.id)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <td>{exercise.exercise_name}</td>
-                  <td>{exercise.exercise_group}</td>
-                  <td>
-                    {new Date(exercise.exercise_date).toLocaleDateString()}
-                  </td>
-                  <td>{exercise.weight_kg}</td>
+        <>
+          <div className="filters">
+            <input
+              type="text"
+              placeholder="Search by exercise name..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+
+            <select
+              value={selectedGroup}
+              onChange={(e) => setSelectedGroup(e.target.value)}
+            >
+              <option value="">All Groups</option>
+              <option value="Abs">Abs</option>
+              <option value="Arms">Arms</option>
+              <option value="Cardio">Cardio</option>
+              <option value="Chest">Chest</option>
+              <option value="Legs">Legs</option>
+              <option value="Shoulders">Shoulders</option>
+            </select>
+          </div>
+
+          <div className="tableContainer">
+            <table border="1" cellPadding="10">
+              <thead>
+                <tr>
+                  <th>Exercise Name</th>
+                  <th>Exercise Group</th>
+                  <th onClick={handleSortByDate} style={{ cursor: "pointer" }}>
+                    Exercise Date {sortOrder === "asc" ? "↑" : "↓"}
+                  </th>
+                  <th>Weight (kg)</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {filteredExercises.map((exercise) => (
+                  <tr
+                    key={exercise.id}
+                    onClick={() => handleRowClick(exercise.id)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <td>{exercise.exercise_name}</td>
+                    <td>{exercise.exercise_group}</td>
+                    <td>
+                      {new Date(exercise.exercise_date).toLocaleDateString()}
+                    </td>
+                    <td>{exercise.weight_kg}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
     </>
   );

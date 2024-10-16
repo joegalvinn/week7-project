@@ -69,7 +69,7 @@ export function FormPage() {
 
         <div className="formGroup">
           <label htmlFor="exercise_group">Exercise Group:</label>
-          <input
+          <select
             type="text"
             id="exercise_group"
             name="exercise_group"
@@ -77,7 +77,17 @@ export function FormPage() {
             onChange={handleChange}
             placeholder="E.g. Chest "
             required
-          />
+          >
+            <option value="" disabled>
+              Select Exercise Group
+            </option>
+            <option value="Abs">Abs</option>
+            <option value="Arms">Arms</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Chest">Chest</option>
+            <option value="Legs">Legs</option>
+            <option value="Shoulders">Shoulders</option>
+          </select>
         </div>
 
         <div className="formGroup">
