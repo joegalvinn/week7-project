@@ -19,7 +19,12 @@ table {
 }
 
 .filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 70vw;
+  gap: 10px;
+  margin: 0 auto;
 }
 
 .tableContainer thead {
