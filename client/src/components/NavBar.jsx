@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
 export default function NavBar({ darkMode }) {
   return (
     <nav className={`nav ${darkMode ? "darkmode" : ""}`}>
-      <Link className="navItem home-link" to="/">
+      <NavLink exact className="navItem" to="/" activeClassName="active">
         Home
-      </Link>
-      <Link className="navItem add-exercise-link" to="/add-exercise">
+      </NavLink>
+      <NavLink className="navItem" to="/add-exercise" activeClassName="active">
         Add Exercise
-      </Link>
-      <Link className="navItem log-link" to="/exercise-log">
+      </NavLink>
+      <NavLink className="navItem" to="/exercise-log" activeClassName="active">
         Log
-      </Link>
+      </NavLink>
     </nav>
   );
 }
