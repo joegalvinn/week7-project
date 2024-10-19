@@ -80,6 +80,7 @@ export function LogPage() {
               <option value="">All Groups</option>
               <option value="Abs">Abs</option>
               <option value="Arms">Arms</option>
+              <option value="Back">Back</option>
               <option value="Cardio">Cardio</option>
               <option value="Chest">Chest</option>
               <option value="Legs">Legs</option>
